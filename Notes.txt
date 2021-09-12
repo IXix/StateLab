@@ -1,0 +1,22 @@
+To keep things simple, we initially look for a machine called "Target".
+Because PVST renames the machine on restore, we just keep using the same pointer after a target is found.
+
+There are contect menu commands Store/Restore to save/load the target machine's state.
+The same can be done from the pattern editor using 0 for store and 1 for restore on the track param.
+The global param is unused for now.
+
+x86 restore seems to work for native Buzz machines from both menu and pattern but PVST crashes from pattern.
+Having said that, I haven't tested a native machine that saves very much non-param info yet.
+
+x64 just doesn't work at all, the hack pointers aren't right
+-----------------------------------------------------
+Native Machines Tested
+Name					menu32 pat32	menu64 pat64
+StateLab                o      o
+IX PatchBay 3           o      o
+-----------------------------------------------------
+VST Plugins Tested
+Name					menu32 pat32	menu64 pat64
+Fullbucket Ragnarok     o      x
+TX16Wx                  o      x
+Valhalla Feq Echo       o      x
